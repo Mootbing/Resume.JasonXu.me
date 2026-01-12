@@ -1,0 +1,70 @@
+# Design Standards & Best Practices
+
+## Typography
+- **Headings (h1, h2)**: Use 'Playfair Display' serif font with font-weight: 300 (light)
+- **Body text**: Use 'Montserrat' sans-serif font with font-weight: 300 (light)
+- **Font sizes**:
+  - h1: 2em
+  - h2: 1.3em
+  - Body: default (1em)
+  - Small text: 0.9em
+- **Line height**: 1.6 for body text, 1.7 for descriptions
+- **Color hierarchy**:
+  - Primary text: #333
+  - Secondary text: #666
+  - Tertiary text: #777
+
+## Border Radius / Corner Rounding
+- **Small elements** (skill tags, icons): 20px (border-radius: 20px)
+- **Medium elements** (cards, containers): 10px (border-radius: 10px)
+- **Large elements**: Use sparingly, typically 10px max
+
+## Spacing
+- **Section spacing**: 25px margin-bottom
+- **Item spacing**: 30px margin-bottom for experience items, 25px for education items
+- **Padding**: 40px for main container (20px on mobile)
+- **Gap spacing**: 15px for contact info, 8px for skill tags, 10px for flex gaps
+
+## Colors
+- **Background**: #fff (white)
+- **Text primary**: #333
+- **Text secondary**: #666
+- **Text tertiary**: #777
+- **Borders**: rgba(0,0,0,0.05) for subtle dividers, rgba(0,0,0,0.1) for grid lines
+- **Skill tags**: rgba(0,0,0,0.05) background
+
+## Glassmorphism
+- **Background**: rgba(255,255,255,0.3)
+- **Backdrop filter**: blur(10px)
+- **Border**: 1px solid rgba(255,255,255,0.5)
+- **Shadow**: 0 4px 6px rgba(0,0,0,0.1)
+
+## Icons
+- **Size**: 14x14px for contact icons
+- **Style**: Fill-based SVG icons using currentColor
+- **Spacing**: 6px margin-right from icon to text
+
+## Layout
+- **Max width**: 800px for content container
+- **Centering**: Use flexbox with align-items: center and justify-content: center
+- **Responsive breakpoint**: 768px
+
+## Borders & Dividers
+- **Item dividers**: 1px solid rgba(0,0,0,0.05)
+- **Grid lines**: 2px dashed rgba(0,0,0,0.1)
+- **Last child**: Remove border-bottom from last items
+
+## Font Weights
+- **Headings**: 300 (light)
+- **Titles**: 600 (semi-bold)
+- **Body**: 300 (light)
+- **Bold text**: 600 (semi-bold)
+
+## Best Practices
+- Use semantic HTML elements
+- Maintain consistent spacing rhythm
+- Keep design minimal and clean
+- Use rgba for transparency effects
+- Ensure proper contrast for accessibility
+- Use flexbox for layouts
+- Add responsive design considerations at 768px breakpoint
