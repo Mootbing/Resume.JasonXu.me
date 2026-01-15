@@ -26,12 +26,14 @@ export default function BackgroundResume() {
         transform: 'translate(-50%, -50%)',
         fontSize: 'clamp(150px, 15vw, 300px)',
         fontWeight: 900,
+        fontFamily: 'Impact, Arial Black, sans-serif',
         color: '#000',
         zIndex: -1,
         whiteSpace: 'nowrap',
         opacity: 0.1,
         pointerEvents: 'none',
-        transition: 'top 0.1s ease'
+        transition: 'top 0.1s ease',
+        letterSpacing: '0.15em'
       }}
     >
       RESUME
