@@ -27,10 +27,23 @@ export default function BlobCursor() {
       // Check for contact button
       const contactButton = target.closest('.contact-button')
       if (contactButton) {
-        const rect = contactButton.getBoundingClientRect()
-        return {
-          type: 'header',
-          bounds: new DOMRect(rect.left - 8, rect.top - 2, rect.width + 16, rect.height + 4),
+        // Use range to get actual text bounds, not full element bounds
+        const range = document.createRange()
+        range.selectNodeContents(contactButton)
+        const textRect = range.getBoundingClientRect()
+
+        const padding = 8
+        const isWithinBounds =
+          clientX >= textRect.left - padding &&
+          clientX <= textRect.right + padding &&
+          clientY >= textRect.top - 2 &&
+          clientY <= textRect.bottom + 2
+
+        if (isWithinBounds) {
+          return {
+            type: 'header',
+            bounds: new DOMRect(textRect.left - 8, textRect.top - 2, textRect.width + 16, textRect.height + 4),
+          }
         }
       }
 
@@ -38,9 +51,19 @@ export default function BlobCursor() {
       const skillBubble = target.closest('.skill-bubble')
       if (skillBubble) {
         const rect = skillBubble.getBoundingClientRect()
-        return {
-          type: 'skill',
-          bounds: new DOMRect(rect.left - 2, rect.top - 2, rect.width + 4, rect.height + 4),
+        
+        const padding = 8
+        const isWithinBounds =
+          clientX >= rect.left - padding &&
+          clientX <= rect.right + padding &&
+          clientY >= rect.top - 4 &&
+          clientY <= rect.bottom + 4
+
+        if (isWithinBounds) {
+          return {
+            type: 'skill',
+            bounds: new DOMRect(rect.left - 8, rect.top - 4, rect.width + 16, rect.height + 8),
+          }
         }
       }
 
@@ -58,19 +81,7 @@ export default function BlobCursor() {
       const downloadBtn = target.closest('.download-btn')
       if (downloadBtn) {
         const rect = downloadBtn.getBoundingClientRect()
-        return {
-          type: 'button',
-          bounds: new DOMRect(rect.left - 4, rect.top - 2, rect.width + 8, rect.height + 4),
-        }
-      }
-
-      // Check for h1/h2
-      const header = target.closest('h1, h2')
-      if (header) {
-        const range = document.createRange()
-        range.selectNodeContents(header)
-        const rect = range.getBoundingClientRect()
-
+        
         const padding = 8
         const isWithinBounds =
           clientX >= rect.left - padding &&
@@ -80,8 +91,31 @@ export default function BlobCursor() {
 
         if (isWithinBounds) {
           return {
+            type: 'button',
+            bounds: new DOMRect(rect.left - 4, rect.top - 2, rect.width + 8, rect.height + 4),
+          }
+        }
+      }
+
+      // Check for h1/h2
+      const header = target.closest('h1, h2')
+      if (header) {
+        // Use range to get actual text bounds, not full element bounds
+        const range = document.createRange()
+        range.selectNodeContents(header)
+        const textRect = range.getBoundingClientRect()
+
+        const padding = 8
+        const isWithinBounds =
+          clientX >= textRect.left - padding &&
+          clientX <= textRect.right + padding &&
+          clientY >= textRect.top - 2 &&
+          clientY <= textRect.bottom + 2
+
+        if (isWithinBounds) {
+          return {
             type: 'header',
-            bounds: new DOMRect(rect.left - 8, rect.top - 2, rect.width + 16, rect.height + 4),
+            bounds: new DOMRect(textRect.left - 8, textRect.top - 2, textRect.width + 16, textRect.height + 4),
           }
         }
       }

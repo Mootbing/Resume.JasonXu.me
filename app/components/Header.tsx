@@ -5,7 +5,9 @@ export default function Header() {
         <img src="/cow.svg" alt="" className="cow-img" />
         <div className="header-text">
           <div className="header-name-row">
-            <h1>Jason Xu</h1>
+            <a href="https://jasonxu.me" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <h1>Jason Xu</h1>
+            </a>
           </div>
           <div className="contact">
             <a href="mailto:him@jasonxu.me" className="contact-link">

@@ -60,6 +60,29 @@ body {
   border-radius: 50%;
 }
 
+.download-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: none;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.download-btn:hover,
+.download-btn:focus,
+.download-btn:active {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: none;
+}
+
 .wrapper {
   position: relative;
   max-width: 800px;
@@ -128,6 +151,12 @@ h1 {
   color: #333;
   margin-bottom: 0;
   display: inline-block;
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+}
+
+h1:hover {
+  transform: scale(1.02);
 }
 
 .contact {
@@ -151,6 +180,12 @@ h1 {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
+  transition: transform 0.2s ease;
+  transform-origin: left center;
+}
+
+.contact-link:hover {
+  transform: scale(1.02);
 }
 
 section {
